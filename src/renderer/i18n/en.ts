@@ -537,6 +537,7 @@ const lang = {
         onepiece_comic: "One Piece style",
         portrait_movie: "Photo realistic movie (portrait)",
         realistic_movie: "Photo realistic movie template",
+        samurai_travel: "Samurai Travel Guide",
         sensei_and_taro: "Student and Teacher",
         shorts: "Short movie template",
         sifi_story: "Multi-character Story",

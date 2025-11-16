@@ -534,6 +534,7 @@ const lang = {
         onepiece_comic: "ワンピース風",
         portrait_movie: "リアルなポートレート動画",
         realistic_movie: "リアル動画テンプレ",
+        samurai_travel: "侍の旅ガイド",
         sensei_and_taro: "先生と太郎の会話",
         shorts: "ショート動画",
         sifi_story: "SFの群像劇",

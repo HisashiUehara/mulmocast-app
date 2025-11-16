@@ -21,6 +21,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { promptTemplates } from "mulmocast/data";
+import { customTemplates } from "@/shared/custom_templates";
 
 const { t } = useI18n();
 
@@ -38,12 +39,15 @@ const internalValue = computed({
   set: (value) => emit("update:modelValue", value),
 });
 
-const simpleTemplate = promptTemplates.filter((temp) => {
+// Combine mulmocast templates with custom templates
+const allTemplates = [...promptTemplates, ...customTemplates];
+
+const simpleTemplate = allTemplates.filter((temp) => {
   return ["ani", "ghibli_comic", "image_prompt"].includes(temp.filename);
 });
 
 const templates = computed(() => {
-  return props.isPro ? promptTemplates : simpleTemplate;
+  return props.isPro ? allTemplates : simpleTemplate;
 });
 
 const selectedTemplateIndex = computed(() => props.modelValue);

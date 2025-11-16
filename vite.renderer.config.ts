@@ -28,6 +28,7 @@ export default defineConfig(async () => {
       alias: {
         "@": path.resolve(__dirname, "./src/renderer"),
         "@/types": path.resolve(__dirname, "./src/types"),
+        "@/shared": path.resolve(__dirname, "./src/shared"),
       },
     },
     build: {

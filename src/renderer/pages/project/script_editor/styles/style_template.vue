@@ -13,9 +13,9 @@
             {{ t("project.chat.applyStyle") }}
           </Button>
           <img
-            :src="templateImageDataSet[currentTemplate?.filename]"
+            :src="allTemplateImages[currentTemplate?.filename]"
             class="w-20"
-            v-if="currentTemplate && templateImageDataSet[currentTemplate.filename]"
+            v-if="currentTemplate && allTemplateImages[currentTemplate.filename]"
           />
         </div>
         <!-- Note after template selection -->
@@ -33,10 +33,14 @@ import { useI18n } from "vue-i18n";
 import { Card, Label, Button } from "@/components/ui";
 import type { MulmoScript } from "mulmocast/browser";
 import { templateImageDataSet } from "mulmocast/data";
+import { customTemplateImageDataSet } from "@/shared/custom_templates";
 import { notifySuccess } from "@/lib/notification";
 import StyleTemplateSelect from "../../chat/style_template.vue";
 
 const { t } = useI18n();
+
+// Merge template image datasets
+const allTemplateImages = { ...templateImageDataSet, ...customTemplateImageDataSet };
 
 const props = defineProps<{
   mulmoScript: MulmoScript;
